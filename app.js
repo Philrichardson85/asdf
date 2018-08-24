@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
 
 
 var app = express();
-app.set('port', process.env.PORT || 80);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
