@@ -63,9 +63,11 @@ router.post('/load', function (req, res, next) {
 
 
 // POST method route D
-router.post('/delete/:uid/:vid', function (req, res, next) {
-  // res.send(req.params)
-  //delete from DB
+router.post('/delete', function (req, res, next) {
+  Verse.deleteOne({_id: req.body.vid}, function(err, oneVerse){
+    console.log(oneVerse);
+    res.json(oneVerse);
+  });
 });
 
 
