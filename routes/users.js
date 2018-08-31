@@ -62,8 +62,9 @@ router.post('/register', function(req, res, next) {
         username: req.body.user,
         password: hash,
         level: 0
-      }, function(err, uid) {
-        res.json(uid);
+      }, function(err, user) {
+        console.log(user);
+        res.json(user);
       });
 
     } else {
