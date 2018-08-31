@@ -137,7 +137,7 @@ router.post('/related', function (req, res, next) {
                                                                                          if (wordEntry.definition.length !== 0) {
                                                                                            Words.create({word: wordEntry.word, rhyme: JSON.stringify(wordEntry.rhyme), related: JSON.stringify(wordEntry.related), definition: JSON.stringify(wordEntry.definition)}, function(err, word){
                                                                                              console.log("success related added");
-                                                                                            res.json(JSON.parse(word));
+                                                                                            res.json(word);
                                                                                            });
                                                                                          } else {
                                                                                            res.json("no results found");
@@ -147,7 +147,7 @@ router.post('/related', function (req, res, next) {
                           });
     }  else {
       console.log("success related found");
-       res.json(JSON.parse(result));
+       res.json(result);
     }
 });
 
