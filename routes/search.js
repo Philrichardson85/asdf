@@ -32,7 +32,7 @@ var Words = mongoose.model('words', wordsSchema);
 
         /////////////////////////////////////
         // get rhyme
-        request("https://api.datamuse.com/words?sl=" + req.body.word + "&max=2000", function (error, response, body) {
+        request("https://api.datamuse.com/words?rel_rhy=" + req.body.word + "&max=2000", function (error, response, body) {
                                    console.log("success rhymes");
                                    foundWords = JSON.parse(body);
 
@@ -101,7 +101,7 @@ router.post('/related', function (req, res, next) {
 
         /////////////////////////////////////
         // get rhyme
-        request("https://api.datamuse.com/words?sl=" + req.body.word + "&max=2000", function (error, response, body) {
+        request("https://api.datamuse.com/words?rel_rhy=" + req.body.word + "&max=2000", function (error, response, body) {
                                    console.log("success rhymes");
                                    foundWords = JSON.parse(body);
 
@@ -173,7 +173,7 @@ router.post('/definition', function (req, res, next) {
 
         /////////////////////////////////////
         // get rhyme
-        request("https://api.datamuse.com/words?sl=" + req.body.word + "&max=2000", function (error, response, body) {
+        request("https://api.datamuse.com/words?rel_rhy=" + req.body.word + "&max=2000", function (error, response, body) {
                                    console.log("success rhymes");
                                    foundWords = JSON.parse(body);
 
