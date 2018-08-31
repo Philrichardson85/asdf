@@ -133,8 +133,8 @@ router.post('/related', function (req, res, next) {
                                                                                          /////////////////////////////////////
                                                                                          // create entry
 
-                                                                                        console.log(wordEntry.rhyme.length);
-                                                                                         if (wordEntry.rhyme.length !== 0) {
+                                                                                        console.log(wordEntry.definition.length);
+                                                                                         if (wordEntry.definition.length !== 0) {
                                                                                            Words.create({word: wordEntry.word, rhyme: JSON.stringify(wordEntry.rhyme), related: JSON.stringify(wordEntry.related), definition: JSON.stringify(wordEntry.definition)}, function(err, word){
                                                                                              console.log("success related added");
                                                                                             res.json(JSON.parse(word.related));
