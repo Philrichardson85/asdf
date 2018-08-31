@@ -61,9 +61,9 @@ router.post('/register', function(req, res, next) {
       User.create({
         username: req.body.user,
         password: hash,
-        level: 0g
-      }, function(err, user) {
-        res.json(user);
+        level: 0
+      }, function(err, uid) {
+        res.json(uid._id);
       });
 
     } else {
