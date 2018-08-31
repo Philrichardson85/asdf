@@ -63,7 +63,7 @@ router.post('/register', function(req, res, next) {
         password: hash,
         level: 0
       }, function(err, uid) {
-        res.json(uid._id);
+        res.json(uid);
       });
 
     } else {
