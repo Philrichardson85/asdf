@@ -50,7 +50,8 @@ router.post('/load', function (req, res, next) {
 // POST method route U
 router.post('/update', function (req, res, next) {
   console.log(req.body);
-  Verse.updateOne({title: req.body.title, uid: req.body.uid},{$set: {uid: req.body.uid, title: req.body.title, lines: req.body.lines}}, function(err, verse){
+
+  Verse.update({title: req.body.title, uid: req.body.uid},{$set: {uid: req.body.uid, title: req.body.title, lines: req.body.lines}}, function(err, verse){
       res.json(verse.nModified);
   });
 });
