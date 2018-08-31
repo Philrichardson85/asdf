@@ -64,7 +64,7 @@ router.post('/register', function(req, res, next) {
         level: 0
       }, function(err, user) {
         console.log(user);
-        res.json(user);
+        res.json(user._id);
       });
 
     } else {
