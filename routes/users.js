@@ -40,7 +40,7 @@ if (err) {
       res.json("bad username");
     } else {
       if (bcrypt.compareSync(req.body.pass, user.password)) {
-        res.json(user);
+        res.json(user._id);
       } else {
         res.json("bad password");
       }
@@ -63,7 +63,7 @@ router.post('/register', function(req, res, next) {
         password: hash,
         level: 0
       }, function(err, uid) {
-        res.json(uid);
+        res.json(uid._id);
       });
 
     } else {
